@@ -1,5 +1,5 @@
 {
   "name": "fsaDragDrop",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A set of directives for dragging, dropping and resizing DOM objects"
 }
