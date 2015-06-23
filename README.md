@@ -34,9 +34,11 @@ When you add 'fsacontainer' to an element, it provides several things.
   <ul>
     <li>
       Set fsadraggable and fsasetdata as attributes on the object you wish to drag.
+      <p>< div fsadraggable fsasetdata>< /div></p>
     </li>
     <li>
       Set fsacontainer and fsagetdata as attributes on the object you wish to drag into.
+      <p>< div fsacontainer fsagetdata>< /div></p>
     </li>
     <li>
       On the fsadraggable element, set the attribute fsasetdata equal to some scope object from the initial controller: <p>fsasetdata=”{{initialcontrollerdata}}”</p>
@@ -51,10 +53,3 @@ When you add 'fsacontainer' to an element, it provides several things.
       And that’s it! <p>Note that myReceivedData should be treated like an async variable. It will not be filled with data until you drag the initial object into the container object.</p>
     </li>
   </ul>
-
-
-
-
-
-
-
