@@ -50,6 +50,8 @@ When you add 'fsacontainer' to an element, it provides several things.
       Inside the receiving controller, set the receiving data variable equal to $attrs.fsacontainer: <p>var myReceivedData = $attrs.fsagetdata</p>
     </li>
     <li>
-      And that’s it! <p>Note that myReceivedData should be treated like an async variable. It will not be filled with data until you drag the initial object into the container object.</p>
+      <p>And that’s it! All you have to do now is drag the fsadraggable element into the fsacontainer element. You will be able to drag multiple elements to and from the container element. Each time you do, the fsagetdata attribute will be appended with a new index containing the new information. Elements can be dragged in multiple times.</p>
+      <p>For example, say you had two divs: the first is a shopping list, the second is an item. You would set fsadraggable and fsasetdata on the item div, and fsacontainer and fsagetdata on the shopping list div. When you drag the item into the shopping list, the object that is on the item's controller will be transferred through the fsagetdata and fsasetdata methods. It will then become available to the shopping list controller as the 0th index on an array stored on fsagetdata. By either adding more item divs or redragging the first item into the shopping cart div, you will append more items onto the fsagetdata array.</p>
+      <p>Note: that myReceivedData should be treated like an async variable. It will not be filled with data until you drag the initial object into the container object.</p>
     </li>
   </ul>
