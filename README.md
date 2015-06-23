@@ -7,7 +7,7 @@ A set of directives for dragging, dropping and resizing DOM objects
   <li>First npm install fsadragdrop</li>
 
   <li>add fsadragdrop into your document (note: take out the extra spaces in the script tags)
-  <p>< script src="/fsadragdrop/dragdirective.js">< /script></p></li>
+  <p>< script src="/fsadragdrop/fsadragdrop.js">< /script></p></li>
 
   <li>Next inject fsadragdrop into your project
   <p>angular.module('app', ['fsadragdrop']);</p></li>
