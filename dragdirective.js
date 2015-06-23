@@ -1,4 +1,4 @@
-angular.module("fsaDragDrop", [])
+angular.module("fsadragdrop", [])
 .directive('fsadraggable', function ($document) {
 
 	return {
