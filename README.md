@@ -9,7 +9,7 @@ A set of directives for dragging, dropping and resizing DOM objects
   <li>add fsadragdrop into your document (note: take out the extra spaces in the script tags)
   <p>< script src="/fsadragdrop/dragdirective.js">< /script></p></li>
 
-  <li>Next inject FSADragDrop into your project
+  <li>Next inject fsadragdrop into your project
   <p>angular.module('app', ['fsadragdrop']);</p></li>
 </ul>
 
@@ -22,14 +22,15 @@ Now you can place any of the following attributes on any DOM object.
 
 <h4>fsaresizeable:</h4>
 <p>By adding 'fsaresizeable' as an attribute you will be able to resize that element. Click the right or bottom edges of the element to resize it.</p>
-<p>Note: the width of the clickable border can be manually adjusted. Go into the fsaresizeable directive and modify the borderWidth variable in the fsaresizeable directive to be any value you want in pixels, the default is 10 pixels.
-Note: While you are able to drag an element anywhere you want on the DOM, the DOM still will treat that element as if it were in its original position. E.g if you drag and resize an element, the DOM will expand as if that element were resizing where it originally was.</p>
+<p>Note: the width of the clickable border can be manually adjusted. Go into the fsaresizeable directive and modify the borderWidth variable in the fsaresizeable directive to be any value you want in pixels, the default is 10 pixels.</p>
+<p>Note: While you are able to drag an element anywhere you want on the DOM, the DOM still will treat that element as if it were in its original position. E.g if you drag and resize an element, the DOM will expand as if that element were resizing where it originally was.</p>
 
 <h4>fsacontainer:</h4>
 When you add 'fsacontainer' to an element, it provides several things. 
 <ul>
   <li>First it provides an element in which an fsadraggable object can be anchored to. In other words, the drag events on an fsadraggable element will also fire the drop events on an fsacontainer element.</li> 
   <li>Second it allows the transfer of data from the fsadraggable object to the fsacontainer object. To utilize the data transfer functionality, follow these steps:</li>
+</ul>
   <ul>
     <li>
       Set fsadraggable and fsasetdata as attributes on the object you wish to drag.
@@ -41,15 +42,19 @@ When you add 'fsacontainer' to an element, it provides several things.
       On the fsadraggable element, set the attribute fsasetdata equal to some scope object from the initial controller: <p>fsasetdata=”{{initialcontrollerdata}}”</p>
     </li>
     <li>
+      Inject $attrs into the receiving controller: <p>app.controller('receivingController', function ($scope, $attrs) {})</p>
     </li>
     <li>
+      Inside the receiving controller, set the receiving data variable equal to $attrs.fsacontainer: <p>var myReceivedData = $attrs.fsagetdata</p>
+    </li>
+    <li>
+      And that’s it! <p>Note that myReceivedData should be treated like an async variable. It will not be filled with data until you drag the initial object into the container object.</p>
     </li>
   </ul>
-</ul>
 
 
 
 
-Inject $attrs into the receiving controller: app.controller('receivingController', function ($scope, $attrs) {}).
-Inside the receiving controller, set the receiving data variable equal to $attrs.fsacontainer: var myReceivedData = $attrs.fsagetdata
-And that’s it! Note that myReceivedData should be treated like an async variable. It will not be filled with data until you drag the initial object into the container object. 
+
+
+
