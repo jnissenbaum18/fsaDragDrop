@@ -1,6 +1,6 @@
 {
   "name": "fsadragdrop",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A set of directives for dragging, dropping and resizing DOM objects",
   "main": "dragdirective.js",
   "repository": {
